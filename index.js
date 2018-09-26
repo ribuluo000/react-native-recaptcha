@@ -122,6 +122,7 @@ export default class ReCaptcha extends Component {
         
         return (
             <MessageWebView
+                originWhitelist={['*']}
                 ref={(ref) => { this.webview = ref ;}}
                 scalesPageToFit={true}
                 mixedContentMode={'always'}
@@ -132,7 +133,7 @@ export default class ReCaptcha extends Component {
                                 getNormalRecaptchaContent(config),
                     baseUrl: url
                 }}
-                onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
+                //onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
                 onNavigationStateChange = {this.onNavigationStateChange}
                 /> 
         );
